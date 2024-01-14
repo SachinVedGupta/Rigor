@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Rigor</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+  <div class="hero_area2">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              Rigor
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="why.html"> Workout </a>
+                </li>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="trainer.html"> Training</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html"> Contact Us</a>
+                </li>
+              </ul>
+              <div class="user_option">
+                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="index.js"></script>
+  <!-- trainer section -->
+
+  <section class="trainer_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Training Plans
+        </h2>
+      </div>
+      <div class="row">
+
+
+        <div id="exercisesInput" class="muscle-search">
+          <label for="dropdownType"></label>
+          <select id="dropdownType" class="muscle-button" name="dropdownType" value="">
+            <option value="" selected disabled>Muscle Group to Train</option>
+            <option value="Abdominals">Abdominals</option>
+            <option value="Abductors">Abductors</option>
+            <option value="Adductors">Adductors</option>
+            <option value="Forearms">Forearms</option>
+            <option value="Glutes">Glutes</option>
+            <option value="Hamstrings">Hamstrings</option>
+            <option value="Lats">Lats</option>
+            <option value="Lower Back">Lower Back</option>
+            <option value="Middle Back">Middle Back</option>
+            <option value="Neck">Neck</option>
+            <option value="Quadriceps">Quadriceps</option>
+            <option value="Traps">Traps</option>
+            <option value="Triceps">Triceps</option>
+            <!-- Add other muscle groups as needed -->
+          </select>
+          <label for="dropdownDiff"></label>
+          <select id="dropdownDiff" class="muscle-button" name="dropdownDiff" value="">
+            <option value="" selected disabled>Difficulty</option>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="expert">Expert</option>
+          </select>
+          <p class="muscle-number">Number of Exercises Variations to See</p>
+          <!-- Add other muscle groups as needed -->
+
+          <input type="number" class="muscle-button" id="exNum" value="0">
+          <button id="submit" class="muscle-submit" onclick="getExercise()">Search</button>
+        </div>
+        
+        <!-- <div id='mainEx'></div> -->
+        
+        <div id='mainEx' class="training-real-module"></div>
+
+
+
+
+
+
+
+
+
+
+        <div class="col-lg-4 col-md-6 mx-auto">
+          <div class="box">
+            <div class="name">
+              <h5 class="name">
+                Calves
+              </h5>
+            </div>
+            <div class="img-box">
+              <div class="img-description">Improve your athletism and jumping height</div>
+              <img src="images/t1.jpg" alt="">
+            </div>
+            <div class="social_box">
+              Pylometrics
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mx-auto">
+          <div class="box">
+            <div class="name">
+              <h5 class="name">
+                Second
+              </h5>
+            </div>
+            <div class="img-box">
+              <div class="img-description">Second Description</div>
+              <img src="images/t1.jpg" alt="">
+            </div>
+            <div class="social_box">
+              Second Category
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mx-auto">
+          <div class="box">
+            <div class="name">
+              <h5 class="name">
+                Third
+              </h5>
+            </div>
+            <div class="img-box">
+              <div class="img-description">Third Description</div>
+              <img src="images/t1.jpg" alt="">
+            </div>
+            <div class="social_box">
+              Third Box
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mx-auto">
+          <div class="box">
+            <div class="name">
+              <h5 class="name">
+                Fourth
+              </h5>
+            </div>
+            <div class="img-box">
+              <div class="img-description">Fourth Description</div>
+              <img src="images/t1.jpg" alt="">
+            </div>
+            <div class="social_box">
+              Fourth Box
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end trainer section -->
+
+  <!-- info section -->
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="info_items">
+        <a href="">
+          <div class="item ">
+            <div class="img-box box-1">
+              <img src="" alt="">
+            </div>
+            <div class="detail-box">
+              <p>
+                Hamilton, ON
+              </p>
+            </div>
+          </div>
+        </a>
+        <a href="">
+          <div class="item ">
+            <div class="img-box box-2">
+              <img src="" alt="">
+            </div>
+            <div class="detail-box">
+              <p>
+                +647 252 7849
+              </p>
+            </div>
+          </div>
+        </a>
+        <a href="">
+          <div class="item ">
+            <div class="img-box box-3">
+              <img src="" alt="">
+            </div>
+            <div class="detail-box">
+              <p>
+                Rigor@gmail.com
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+  <!-- footer section -->
+  <footer class="container-fluid footer_section">
+    <p>
+      &copy; 2024 All Rights Reserved.
+      <a href="https://html.design/">Rigor</a>
+    </p>
+  </footer>
+  <!-- footer section -->
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>

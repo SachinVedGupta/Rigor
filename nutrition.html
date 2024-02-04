@@ -4,27 +4,82 @@
 <head>
     <title>Nutrition</title>
 </head>
+<body class="sub_page">
+    <div class="hero_area2">
+      <!-- header section strats -->
+      <header class="header_section">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+              <span>
+                Rigor
+              </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+  
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                <ul class="navbar-nav  ">
+                  <li class="nav-item ">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="why.html"> Workout </a>
+                  </li>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="trainer.html"> Training</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html"> Contact Us</a>
+                  </li>
+                  </li class="nav-item">
+                    <a class="nav-link" href="nutrition.html"> Nutrition</a>
+                  </li>
+                  </li class="nav-item">
+                    <a class="nav-link" href="signup.html"> Sign Up</a>
+                  </li>
+                </ul>
+                <div class="user_option">
+                  <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                    <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- end header section -->
+    </div>
 <body>
-    <script src="script.js"></script>
+    <script src="index.js"></script>
     <div class="header">
         <h2>Nutrition</h2>
     </div>
         <div class="input-group">
-            <label for="calNum">Weight (lbs):</label>
-        <input type="number" id="calNum" value=""/>
-        <!--height and then age and then gender(dropdown)-->
-        <label for="heightNum">Height (cm):</label>
-        <input type="number" id="heightNum" value=""/>
-        <label for="ageNum">Age:</label>
-        <input type="number" id="ageNum" value=""/>
-        <label for="dropdownGender">Sex: </label>
-        <select type="dropdown" id="dropdownGender" name="dropdownGender" value="">
-            <option value="N/A">(select) </option> 
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select>
-        <button id="submit" onclick="getCalories(), getDailyNutrients()">Submit</button>
+            <label id="weightL">Weight (lbs):</label>
+            <input type="number" id="weight" value=""/>
+            <label id="heightL">Height (cm):</label>
+            <input type="number" id="height" value=""/>
+            <label id="ageL">Age:</label>
+            <input type="number" id="age" value=""/>
+            <label id="Labelle">Sex: </label>
+            <select type="dropdown" id="sex" name="sex" value="">
+                <option value="N/A">(select) </option> 
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <button id="submit" onclick="getDailyNutrients()">Submit</button>
         </div>
+
+        <div id="output">
+            <!--stuffs-->
+        </div>
+
     </form>
 </body>
 

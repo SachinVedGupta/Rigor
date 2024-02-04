@@ -35,7 +35,6 @@ const usersDb  = firebase.firestore().collection('users')
 function signup(){
     let email = document.getElementById("emailSignUp").value
     let password = document.getElementById("passwordSignUp").value
-    console.log(password)
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
         // User signed up successfully
@@ -54,7 +53,8 @@ function signup(){
             console.error(error)
         })
         sessionStorage.setItem('userID',user.uid)   
-        console.log("good")
+        window.location.href = './index.html'
+        
     })
     .catch((error) => {
         switch(error.code){
@@ -81,7 +81,8 @@ function signin(){
     .then((userCredential) => {
       // User signed in successfully
       const user = userCredential.user;
-      sessionStorage.setItem("userID",user,uID)
+      sessionStorage.setItem("userID",user.uid)
+      window.location.href = './index.html'
     })
     .catch((error) => {
       // Handle errors
@@ -91,13 +92,14 @@ function signin(){
         case 'auth/invalid-email':
             alert("Incorrect email or password")
         default:
-            console.log(error.code)
+            console.log(error)
       }
     });
 }
 
 
 function addEx(name){
+    try{
     let userID = sessionStorage.getItem("userID")
     let userdoc = usersDb.doc(userID)
 
@@ -111,18 +113,31 @@ function addEx(name){
                 excersizes: currentArray
             });
         })
+    } catch(error){
+        alert("please sign in to add to your workout")
+        window.location.href = './signup.html'
+    }
 }
 
+try {
+    document.getElementById("addExcersize").addEventListener("keypress", function(event) {
+        // If the user presses the "Enter" key on the keyboard
+        if (event.key === "Enter") {
+          // Cancel the default action, if needed
+          event.preventDefault();
+          // Trigger the button element with a click
+          addEx(document.getElementById("addExcersize").value)
+        }
+      });
 
-document.getElementById("addExcersize").addEventListener("keypress", function(event) {
-    // If the user presses the "Enter" key on the keyboard
-    if (event.key === "Enter") {
-      // Cancel the default action, if needed
-      event.preventDefault();
-      // Trigger the button element with a click
-      addEx(document.getElementById("addExcersize").value)
-    }
-  });
+      document.getElementById('addtoWorkout').addEventListener('click', () => {
+        event.preventDefault()
+        addEx(document.getElementById("addExcersize").value); // Trigger the function when the button is clicked
+    });
+} catch (error) {
+    
+}
+try {
 document.getElementById('signup').addEventListener('click', () => {
     event.preventDefault()
     signup(); // Trigger the function when the button is clicked
@@ -131,5 +146,8 @@ document.getElementById('signIn').addEventListener('click', () => {
     event.preventDefault()
     signin(); // Trigger the function when the button is clicked
 });
+} catch(error) {
+    
+}
 
 

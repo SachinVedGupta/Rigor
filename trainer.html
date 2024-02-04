@@ -92,7 +92,10 @@
       </div>
       <div class="row">
 
-
+        <div>
+          <input type="text" id = "addExcersize">
+          <button type = "button" id = "addtoWorkout" onclick="addEx(document.getElementById("addExcersize").value)">Add to Workout </button>
+        </div>
         <div id="exercisesInput" class="muscle-search">
           <label for="dropdownType"></label>
           <select id="dropdownType" class="muscle-button" name="dropdownType" value="">
@@ -127,9 +130,7 @@
           
           <button id="submit" class="muscle-submit" onclick="getExercise()">Search</button>
         </div>
-        <div>
-          <input type="text" id = "addExcersize">
-        </div>
+        
         
         <!-- <div id='mainEx'></div> -->
         

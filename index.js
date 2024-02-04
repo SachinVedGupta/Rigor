@@ -243,6 +243,7 @@ function displaySelectedValue(){
   var time = document.getElementById('timeNum').value
   var form = document.getElementById('mainActList')
   let radios = form.elements['exerciseType']
+//   document.getElementById("mainActList").innerHTML = ""
 
   for(i = 0; i < radios.length; i++){
       if (radios[i].checked){
@@ -254,7 +255,7 @@ function displaySelectedValue(){
       head.innerHTML ="Please select a element to display"
   }else{
       let head = document.createElement("h6")
-      let calc = array[final].calories_per_hour * (time/60)
+      let calc = Math.round(array[final].calories_per_hour * (time/60))
       head.innerHTML = 'you burned ' + calc + ' calories'
       document.getElementById("mainActList").appendChild(head);
   }

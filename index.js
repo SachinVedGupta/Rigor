@@ -1,3 +1,6 @@
+
+
+
 function getExercise() {
   let muscleElem = document.getElementById('dropdownType');
   let muscle = muscleElem.value;
@@ -64,6 +67,19 @@ function getExercise() {
                   instructions.id = "instructions";
                   instructions.innerHTML = result[i].instructions;
                   div.appendChild(instructions);
+
+                  var addButton = document.createElement("button")
+                  addButton.id = "addButton"
+                  addButton.type = "button"
+                  addButton.innerHTML = "Add this to Your Workout"
+                  addButton.addEventListener('click', () => {
+                    event.preventDefault()
+                    addEx(name) // Trigger the function when the button is clicked
+                });
+                  div.appendChild(addButton)
+                  
+
+                
 
                   document.getElementById("mainEx").appendChild(div);
                   j++;
@@ -193,3 +209,4 @@ function displaySelectedValue(){
       document.getElementById("mainActList").appendChild(head);
   }
 }
+

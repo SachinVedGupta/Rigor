@@ -26,9 +26,17 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <!-- Add the Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore-compat.js"></script>
+  <!-- Initialize Firebase with your config -->
+  <script type = "module" src="firebase-config.js"></script>
 </head>
 
 <body class="sub_page">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="index.js"></script>
   <div class="hero_area2">
     <!-- header section strats -->
     <header class="header_section">
@@ -42,7 +50,8 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-
+          
+    
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
@@ -88,26 +97,42 @@
               </h2>
             </div>
             <form action="">
+              
               <div>
-                <input type="text" placeholder="First Name" />
+                <input type="email" placeholder="Username" id="emailSignUp" />
               </div>
               <div>
-                <input type="email" placeholder="Last Name" />
-              </div>
-              <div>
-                <input type="text" placeholder="Username" />
-              </div>
-              <div>
-                <input type="text" placeholder="Password" />
+                <input type="password" placeholder="Password" id = "passwordSignUp"/>
               </div>
               <div class="d-flex ">
-                <button>
-                  Confirm
+                <button id="signup" type="submit"> 
+                  Sign Up
                 </button>
+              </form>
+        </div>
+        <div class="signup-container">
+              <form>
+                <div class="heading_container">
+                  <h2>
+                    SIGN IN
+                  </h2>
+                </div>
+                <form action="">
+                  <div>
+                    <input type="email" placeholder="Username" id = 'emailSignIn'/>
+                  </div>
+                  <div>
+                    <input type="password" placeholder="Password" id = 'passwordSignIn'/>
+                  </div>
+                  <div class="d-flex ">
+                    <button id="signIn" type="submit">
+                      Sign In
+                    </button>
               </div>
             </form>
+          </div>
 
-        </div>
+        
       </div>
     </div>
   </section>

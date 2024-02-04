@@ -26,6 +26,55 @@ function getExercise() {
       diffNum = 3
   }
 
+  function getDailyNutrients()
+{
+    //this function uses the user's weight to calculate the amount of nutrients they should consume daily
+    //takes the user's info from the input fields (their id is surrounded by the '' )
+    let weight = document.getElementById('calNum').value;
+    let height = document.getElementById('heightNum').value;
+    let age = document.getElementById('ageNum').value;
+    let gender = document.getElementById('dropdownGender').value.toLowerCase();
+    let bmr = 0
+    if (gender == "male")
+    {
+        bmr = 66.47 + (6.23865* weight) + (5.003 * height) - (6.75 * age);
+    }
+    else if(gender == "female")
+    {
+        bmr = 655.1 + (4.3389 * weight) + (1.850 * height) - (4.676 * age);
+    }
+    else
+    {
+        alert("Invalid Sex")
+    }
+
+    var cal1 = bmr * 1.2;
+    var cal2 = bmr * 1.375;
+    var cal3 = bmr * 1.55;
+    var cal4 = bmr * 1.725;
+    var cal5 = bmr * 1.9;
+
+    let minProtein = weight * 0.35;
+    let maxProtein = weight;
+
+    let minCarbs = cal1 * 0.45;
+    let maxCarbs = cal1 * 0.65;
+    minCarbs = minCarbs / 4;
+    maxCarbs = maxCarbs / 4;
+
+    let minFat = cal1 * 0.2
+    let maxFat = cal1 * 0.3;
+    minFat = minFat / 9;
+    maxFat = maxFat / 9;
+    
+    let output = " Calories burned per day: " + "\n No exercise: " + cal1 + "\n Light exercise: " + cal2 + "\n Moderate exercise: " + cal3 + "\n Heavy exercise: " + cal4 + "\n Very heavy exercise: " + cal5 + "\n Protein intake should be between " + minProtein + " and " + maxProtein + " grams per day." + "\n Carbohydrate intake should be between " + minCarbs + " and " + maxCarbs + " grams per day." + "\n Fat intake should be between " + minFat + " and " + maxFat + " grams per day.";
+    //display the results on the webpage
+    let result = document.createElement('h2') //create a new h2 element
+    result.innerHTML = output; //set the innerHTML of the h2 element to the output string
+    document.getElementById("mainCal").appendChild(result); //append the h2 element to the 'mainCal' div
+}
+
+
   $.ajax({
       method: 'GET',
       url: 'https://api.api-ninjas.com/v1/exercises?muscle=' + muscle,

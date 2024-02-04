@@ -1,0 +1,31 @@
+<!--This page is a page that calculates the calories and macronutrients a person needs to consume based on their age, weight, height and sex-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Nutrition</title>
+</head>
+<body>
+    <script src="script.js"></script>
+    <div class="header">
+        <h2>Nutrition</h2>
+    </div>
+        <div class="input-group">
+            <label for="calNum">Weight (lbs):</label>
+        <input type="number" id="calNum" value=""/>
+        <!--height and then age and then gender(dropdown)-->
+        <label for="heightNum">Height (cm):</label>
+        <input type="number" id="heightNum" value=""/>
+        <label for="ageNum">Age:</label>
+        <input type="number" id="ageNum" value=""/>
+        <label for="dropdownGender">Sex: </label>
+        <select type="dropdown" id="dropdownGender" name="dropdownGender" value="">
+            <option value="N/A">(select) </option> 
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <button id="submit" onclick="getCalories(), getDailyNutrients()">Submit</button>
+        </div>
+    </form>
+</body>
+
+</html>

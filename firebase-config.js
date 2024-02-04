@@ -120,7 +120,77 @@ function addEx(name){
 
 
 function displayEx(){
-
+    try{
+        let userID = sessionStorage.getItem("userID")
+        let userdoc = usersDb.doc(userID)
+    
+        userdoc.get()
+            .then((doc) => {
+                const currentArray = doc.data().excersizes 
+                document.getElementById("workoutList").innerHTML = "";
+                
+                for(let i=0; i < currentArray.length; i++){
+                    let name = JSON.stringify(currentArray[i].name).split(" ")[0]
+                    name = name.replace(/[\s'"]/g, '')
+                    console.log(name)
+                    $.ajax({
+                        method: 'GET',
+                        url: 'https://api.api-ninjas.com/v1/exercises?name=' + name,
+                        headers: { 'X-Api-Key': 'HyufkDepdUpM5bVIOYLOeg==a9EZI62GZy7qJjbV'},
+                        contentType: 'application/json',
+                        success: function(result) { 
+                            
+                        console.log(JSON.stringify(currentArray[i].name).split(" ")[0])
+                          
+                  
+                            
+                  
+                           
+                                    var div = document.createElement("div");
+                                    div.id = "child" + i;
+                  
+                                    var name = document.createElement("h6");
+                                    name.id = "name";
+                                    name.className = "workout-class"
+                                    name.innerHTML = result[0].name;
+                                    div.appendChild(name);
+                  
+                                    var type = document.createElement("h4");
+                                    type.id = "type";
+                                    type.className = "workout-type"
+                                    type.innerHTML = result[0].type;
+                                    div.appendChild(type);
+                  
+                  
+                                    var instructions = document.createElement("nav");
+                                    instructions.id = "instructions";
+                                    instructions.className = "workout-notes"
+                                    instructions.innerHTML = result[i].instructions;
+                                    div.appendChild(instructions);
+                  
+                                    
+                                    
+                  
+                                  
+                  
+                                    document.getElementById("workoutList").appendChild(div);
+                                  
+                              
+                           
+                          
+                        },
+                        error: function ajaxError(jqXHR) {
+                            alert('Error: ' + jqXHR.responseText);
+                        }
+                    });
+                }
+    
+              
+            })
+        } catch(error){
+            alert("please sign in to add to your workout")
+            window.location.href = './signup.html'
+        }
 }
 
 try {
@@ -153,6 +223,15 @@ document.getElementById('signIn').addEventListener('click', () => {
 } catch(error) {
     
 }
+
+try {
+    document.getElementById('showWorkout').addEventListener('click', () => {
+        event.preventDefault()
+        displayEx(); // Trigger the function when the button is clicked
+    })
+    } catch(error) {
+        
+    }
 
 
 

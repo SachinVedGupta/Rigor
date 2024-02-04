@@ -13,6 +13,12 @@
   <meta name="author" content="" />
 
   <title>Rigor</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="index.js" ></script>
+  <script src="firebase-config.js" type="module"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore-compat.js"></script>
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css"
@@ -202,7 +208,7 @@
               <input type="text" placeholder="Notes" />
             </div>
             <div class="d-flex ">
-              <button>
+              <button id = "listWorkout" type = "submit">
                 Confirm
               </button>
             </div>

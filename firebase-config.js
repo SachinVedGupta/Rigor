@@ -53,8 +53,7 @@ function signup(){
             console.error(error)
         })
         sessionStorage.setItem('userID',user.uid)   
-        window.location.href = './index.html'
-        
+        alert("LETS GO")
     })
     .catch((error) => {
         switch(error.code){
@@ -82,7 +81,7 @@ function signin(){
       // User signed in successfully
       const user = userCredential.user;
       sessionStorage.setItem("userID",user.uid)
-      window.location.href = './index.html'
+      alert("LETS GO")
     })
     .catch((error) => {
       // Handle errors
@@ -119,6 +118,11 @@ function addEx(name){
     }
 }
 
+
+function displayEx(){
+
+}
+
 try {
     document.getElementById("addExcersize").addEventListener("keypress", function(event) {
         // If the user presses the "Enter" key on the keyboard
@@ -149,5 +153,7 @@ document.getElementById('signIn').addEventListener('click', () => {
 } catch(error) {
     
 }
+
+
 
 

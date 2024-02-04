@@ -53,7 +53,7 @@ function signup(){
             console.error(error)
         })
         sessionStorage.setItem('userID',user.uid)   
-        alert("LETS GO")
+        alert("Signed Up")
     })
     .catch((error) => {
         switch(error.code){
@@ -81,7 +81,7 @@ function signin(){
       // User signed in successfully
       const user = userCredential.user;
       sessionStorage.setItem("userID",user.uid)
-      alert("LETS GO")
+      alert("Signed In")
     })
     .catch((error) => {
       // Handle errors
@@ -128,7 +128,9 @@ function displayEx(){
             .then((doc) => {
                 const currentArray = doc.data().excersizes 
                 document.getElementById("workoutList").innerHTML = "";
-                
+                if(currentArray.length == 0){
+                    return False
+                }
                 for(let i=0; i < currentArray.length; i++){
                     let name = JSON.stringify(currentArray[i].name).split(" ")[0]
                     name = name.replace(/[\s'"]/g, '')

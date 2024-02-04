@@ -268,7 +268,7 @@ a:focus {
     }
 
     a {
-      @include hero_btn($white, $black, 8px, 35px, 0px);
+      @include hero_btn($white, $white, 8px, 35px, 0px);
       text-transform: uppercase;
       margin-top: 35px;
     }
